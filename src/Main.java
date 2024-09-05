@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class Main {
         // No. 3
         showContinueStop();
         // No.4
-
+        guessNumber();
 
 
 
@@ -66,6 +67,31 @@ public class Main {
          else{
              System.out.println("Your input choice is not available");
          }
+
+     }
+
+     public static  void guessNumber (){
+
+         int randomNumber = 28;
+            boolean isGuessed = false;
+         if  (isGuessed  == false) {
+             int userGuess = InputUser.getInt("Guess a number between 1 and 100: ");
+
+             if (userGuess < 1 || userGuess > 100) {
+                 System.out.println("Please guess a number within the range of 1 to 100.");
+
+             }
+
+             if (userGuess < randomNumber) {
+                 System.out.println("Too low, Please try again");
+             } else if (userGuess > randomNumber) {
+                 System.out.println("Too high, Please try again");
+             } else {
+                 System.out.println("Yes  the correct number: " + randomNumber);
+                 isGuessed = true;
+             }
+         }
+
 
      }
 
