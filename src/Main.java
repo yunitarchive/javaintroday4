@@ -10,7 +10,10 @@ public class Main {
         // No. 3
         showContinueStop();
         // No.4
-        guessNumber();
+        //guessNumber();
+
+        // No.5
+        changeCharacter();
 
 
 
@@ -79,9 +82,7 @@ public class Main {
 
              if (userGuess < 1 || userGuess > 100) {
                  System.out.println("Please guess a number within the range of 1 to 100.");
-
              }
-
              if (userGuess < randomNumber) {
                  System.out.println("Too low, Please try again");
              } else if (userGuess > randomNumber) {
@@ -94,6 +95,21 @@ public class Main {
 
 
      }
+
+    public static  void  changeCharacter (){
+        String sentence = InputUser.getString("Enter sentences that you want change the formating: ");
+        String[] words = sentence.split(" ");
+        String modifiedSentence = "";
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            if (word.length() > 0) {
+                String modifiedWord = word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase();
+                modifiedSentence += modifiedWord + " ";
+            }
+        }
+
+        System.out.println("Modified format sentences: " + modifiedSentence);
+    }
 
     public static void showPriceMenu() {
         int option = InputUser.getInt("Please input the menu number you would like to order:\n" +
